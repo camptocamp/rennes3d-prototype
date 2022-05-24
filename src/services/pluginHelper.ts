@@ -21,17 +21,13 @@ export const pluginFactorySymbol = Symbol('pluginFactory');
  */
 export async function loadPlugin(app, name, config, registry = 'https://plugins.virtualcitymap.de/') {
   const module = config.entry;
-  // const pl = await import('../../plugins/@vcmap/pluginExample/index.js');
-  // console.log(pl);
   try {
     let plugin;
     if (window.VcsPluginLoaderFunction) { // TODO PluginLoaderfunction needs to be documented.
       plugin = await window.VcsPluginLoaderFunction(name, module);
     } else {
-      const test = "../../" + module;
-      console.log(test === "../../plugins/@vcmap/pluginExample/index.js")
-      plugin = await import("../../plugins/@vcmap/pluginExample/index.js");
-      console.log(plugin)
+      const modulePath = `../../${module}`;
+      plugin = await import(modulePath);
     }
     if (plugin.default == null || typeof plugin.default !== 'function') {
       getLogger().error(`plugin ${name} does not provide a default exported function`);
@@ -48,7 +44,6 @@ export async function loadPlugin(app, name, config, registry = 'https://plugins.
       return null;
     }
     pluginInstance[pluginFactorySymbol] = plugin.default;
-    console.log("pluginInstance", pluginInstance)
     return pluginInstance;
   } catch (err) {
     getLogger().error(`failed to load plugin ${name}`);
