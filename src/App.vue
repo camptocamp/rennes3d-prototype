@@ -1,29 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <RouterView />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import RennesApp from './services/RennesApp';
+import { provide } from '@vue/composition-api';
 
 export default Vue.extend({
   name: 'App',
-  components: {
-    HelloWorld
+  props: {
+    app: {
+      type: RennesApp,
+      required: true,
+    },
+  },
+  setup(props) {
+    provide('vcsApp', props.app);
   }
 });
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f6fe;
+}
+
+#app_main {
+  flex: 1;
+  display: flex;
 }
 </style>

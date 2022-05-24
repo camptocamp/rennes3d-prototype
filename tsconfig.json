@@ -7,6 +7,7 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
@@ -35,6 +36,7 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/contentTree/contentTreeItem.js"
   ]
 }
