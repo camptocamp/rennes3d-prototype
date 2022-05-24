@@ -6,7 +6,7 @@ import { loadPlugin } from './pluginHelper';
 import RennesWindowManager from './WindowManager';
 
 
-class RennesAppBis extends VcsUiApp {
+class RennesApp extends VcsUiApp {
   constructor() {
     super();
 
@@ -73,4 +73,4 @@ class RennesAppBis extends VcsUiApp {
   }
 }
 
-export default RennesAppBis;
+export default RennesApp;

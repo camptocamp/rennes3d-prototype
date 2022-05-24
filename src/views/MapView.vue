@@ -6,7 +6,6 @@
       <MapComponent/>
       <MapControls  />
       <RennesWindowManager />
-      <!-- <RennesToolboxManager /> -->
     </div>
   </div>
 </template>
@@ -17,7 +16,6 @@ import MapComponent from '@/components/MapComponent.vue';
 import AppHeader from '@/components/AppHeader.vue';
 import AppSidebar from '@/components/AppSidebar.vue';
 import MapControls from '@/components/MapControls.vue';
-import RennesToolboxManager from '@/components/RennesToolboxManager.vue';
 import RennesWindowManager from '@/components/RennesWindowManager.vue';
 
 export default Vue.extend({
@@ -28,7 +26,6 @@ export default Vue.extend({
     AppSidebar,
     MapControls,
     RennesWindowManager
-    // RennesToolboxManager
   },
 });
 </script>

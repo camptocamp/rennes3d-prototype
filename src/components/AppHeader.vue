@@ -17,12 +17,10 @@
       3d
     </button>
     <ToolboxManager />
-    <!-- <button><router-link to="/foo">Go to Foo</router-link></button> -->
   </div>
 </template>
 
-<script lang="ts">
-import RennesAppBis from "@/services/RennesApp";
+<script>
 import ToolboxManager from "./toolbox/ToolboxManager.vue";
 
 export default {
@@ -37,7 +35,7 @@ export default {
   },
   inject: ["vcsApp"],
   methods: {
-    async toggle3d(mapName: string) {
+    async toggle3d(mapName) {
       this.vcsApp.maps.setActiveMap(mapName);
       this.is3d = !this.is3d;
     },

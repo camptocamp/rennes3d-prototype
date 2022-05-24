@@ -13,10 +13,7 @@ export default {
   },
   mounted() {
     window.rennesApp.maps.setTarget(window.rennesApp.id);
-  },
-  setup() {
-    const app = inject("vcsApp");
-  },
+  }
 };
 </script>
 

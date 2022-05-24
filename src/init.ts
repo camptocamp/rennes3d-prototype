@@ -21,7 +21,6 @@ async function init(App: Component, target: string, config: VcsAppConfig): Promi
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-
   await app.addContext(context);
 
   new Vue({
